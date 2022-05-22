@@ -1,0 +1,118 @@
+
+<form [formGroup]='pensionerForm' (ngSubmit)="createPensioner()" autocomplete="off">
+  <h2 class="text-center text-primary">Pensioner Details</h2>
+  <hr>
+  <!-- <div class="form-group">
+    <input type="text" class="form-control" formControlName="aadharNumber" placeholder="Aadhar Number" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("aadharNumber")?.errors && pensionerForm.get("aadharNumber").touched'>
+    <div class="invalid-feedback">
+      Please enter a Username
+    </div>
+  </div> -->
+
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="name" placeholder="Username" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("name")?.errors && pensionerForm.get("name").touched'>
+    <div class="invalid-feedback">
+      Please enter a Username
+    </div>
+  </div>
+
+
+
+  <!-- <div class="form-group">
+    <input type="date" class="form-control" formControlName="dateOfBirth" placeholder="DateOfBirth" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("dateOfBirth")?.errors && pensionerForm.get("dateOfBirth").touched'>
+    <div class="invalid-feedback">
+      Please provide your date of Birth
+    </div>
+  </div> -->
+
+  <app-date-input [formControl]="pensionerForm.controls['dateOfBirth']" [label]='"Date Of Birth"'></app-date-input>
+
+
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="panCardNumber" placeholder="Enter your Pan Card details" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("panCardNumber")?.errors && pensionerForm.get("panCardNumber").touched'>
+    <div class="invalid-feedback">
+      Please provide your PanCard Details
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" formControlName="salary" placeholder="Enter your Salary details" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("salary")?.errors && pensionerForm.get("salary").touched'>
+    <div class="invalid-feedback">
+      Please provide your Salary Details
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" formControlName="allowance" placeholder="Enter your Allowance details" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("allowance")?.errors && pensionerForm.get("allowance").touched'>
+    <div class="invalid-feedback">
+      Please provide your Allowance Details
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label" style="margin-right: 10px;">Pension Type</label>
+    <label class="radio-inline">
+      <input type="radio" value="self" formControlName="pensionType" class="ml-5"> Self
+    </label>
+    <label class="radio-inline">
+      <input type="radio" value="family" formControlName="pensionType" class="ml-5"> Family
+    </label>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="bankName" placeholder="Enter your Bank details" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("bankName")?.errors && pensionerForm.get("bankName").touched'>
+    <div class="invalid-feedback">
+      Please provide your Bank Details
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="accountNumber" placeholder="Enter your Account details" style="margin-bottom: 10px;"
+    [class.is-invalid]='pensionerForm.get("accountNumber")?.errors && pensionerForm.get("accountNumber").touched'>
+    <div class="invalid-feedback">
+      Please provide your Account Details
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label" style="margin-right: 10px;">Bank Type</label>
+    <label class="radio-inline">
+      <input type="radio" value="public" formControlName="bankType"  class="ml-5"> Public
+    </label>
+    <label class="radio-inline">
+      <input type="radio" value="private" formControlName="bankType" class="ml-5"> Private
+    </label>
+  </div>
+
+  <!-- <div class="form-group">
+    <input type="password" class="form-control" formControlName="password" placeholder="Password"
+    style="margin-bottom: 10px"
+    [class.is-invalid] = 'registerForm.get("password").errors && registerForm.get("password").touched'>
+    <div *ngIf="registerForm.get('password').hasError('required')" class="invalid-feedback">Please enter a Password</div>
+    <div *ngIf="registerForm.get('password').hasError('minlength')" class="invalid-feedback">Password must be atleast 8 characters</div>
+    <div *ngIf="registerForm.get('password').hasError('maxlength')" class="invalid-feedback">Password must be atmost 12 characters</div>
+  </div> -->
+  <!-- <div class="form-group">
+    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password"
+    [class.is-invalid] = 'registerForm.get("confirmPassword").errors && registerForm.get("confirmPassword").touched'>
+    <div *ngIf="registerForm.get('confirmPassword').hasError('required')" class="invalid-feedback">Please enter a Password</div>
+    <div *ngIf="registerForm.get('confirmPassword').hasError('isMatching')" class="invalid-feedback">Confirm Password should match the Password</div>
+  </div> -->
+  <!-- <div class="form-group text-center">
+    <button class="btn btn-success mr-2" type="submit">Register</button>
+    <button class="btn btn-primary mr-2" (click)="cancel()" type="button">Cancel</button>
+  </div> -->
+
+
+  <div class="form-group text-center">
+    <button class="btn btn-success mr-2" type="submit" [disabled]="!pensionerForm.valid">Create</button>
+  </div>
+</form>

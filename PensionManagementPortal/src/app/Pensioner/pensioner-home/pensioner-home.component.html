@@ -1,0 +1,10 @@
+<body>
+
+  <form #consentForm = "ngForm" autocomplete="off" class="d-flex">
+    <input class="form-control me-2" type="text" placeholder="Enter your Aadhar Number" name="username" [(ngModel)]="aadharNumber" style="margin: 5px;">
+    <button class="btn btn-outline-success" type="submit" style="margin: 5px; color: black;" routerLink="/penionerDetailDisplay/{{aadharNumber}}">Proceed</button>
+  </form>
+  <p>Please accept to our terms and conditions</p>
+
+
+</body>

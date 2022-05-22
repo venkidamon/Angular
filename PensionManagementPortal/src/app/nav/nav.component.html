@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">NPS</a>
+        <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
+          <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user['userName']}}</a>
+            <div class="dropdown-menu mt-3" *dropdownMenu>
+              <a href="" class="dropdown-item">Edit Profile</a>
+              <div class="dropdown-divider"></div>
+              <a href="" class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+
+        </div>
+        <form #loginForm = "ngForm" (submit)="login()" autocomplete="off" class="d-flex" *ngIf="(accountService.currentUser$ | async) === null">
+          <input class="form-control me-2" type="text" placeholder="Aadhar Number" name="username" [(ngModel)]="model.username" style="margin: 5px;">
+          <input class="form-control me-2" type="password" placeholder="password" name="password" [(ngModel)]="model.password" style="margin: 5px;">
+          <button class="btn btn-outline-success" type="submit" style="margin: 5px; color: white;">Login</button>
+        </form>
+      </div>
+
+  </div>
+
+</nav>

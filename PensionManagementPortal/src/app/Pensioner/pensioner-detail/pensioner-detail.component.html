@@ -1,0 +1,136 @@
+
+
+<div style="text-align: center;" *ngIf="pensionerDetail">
+  <h1>Username: {{pensionerDetail.name}}</h1>
+<hr>
+  <table class="table table-borderless" style="text-align: center;">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Personal Details</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><hr></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th scope="col">Date Of Birth</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.dateOfBirth.slice(0,10)}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="col">Pancard Details</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.panCardNumber}}</th>
+      </tr>
+      <tr>
+        <th scope="col">Last Month Salary</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.salary}}</th>
+      </tr>
+      <tr>
+        <th scope="col">Allowance</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.allowance}}</th>
+
+      </tr>
+      <tr>
+        <th><hr></th>
+        <th><hr></th>
+        <th><hr></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Pension Scheme Chosen</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><hr></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th scope="col">Pension Type</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.pensionType}}</th>
+
+      </tr>
+      <tr>
+        <th><hr></th>
+        <th><hr></th>
+        <th><hr></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Bank Details</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><hr></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th scope="col">Bank Name</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.bankName}}</th>
+
+      </tr>
+      <tr>
+        <th scope="col">Account Number</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.accountNumber}}</th>
+
+      </tr>
+      <tr>
+        <th scope="col">Bank Type</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.bankType}}</th>
+
+      </tr>
+      <tr>
+        <th><hr></th>
+        <th><hr></th>
+        <th><hr></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Pension Cost</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><hr></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th scope="col">Pension Amount</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.amount}}</th>
+
+      </tr>
+      <tr>
+        <th scope="col">Bank Service Charge</th>
+        <th></th>
+        <th scope="col">{{pensionerDetail.bankServiceCharge}}</th>
+
+      </tr>
+
+      <tr *ngIf="total > 0">
+        <th scope="col">Total</th>
+        <th></th>
+        <th scope="col">{{total}}</th>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</div>

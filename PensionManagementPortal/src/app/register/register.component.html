@@ -1,0 +1,50 @@
+<div style="margin-top: 100px; text-align: center;" >
+  <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+    <h1 class="text-center text-primary">Sign Up Now!</h1>
+    <p>Register Now and Live Hassle Free</p>
+    <hr>
+    <div class="form-group">
+      <input [class.is-invalid]='registerForm.get("username").errors && registerForm.get("username").touched' type="text"
+        class="form-control" formControlName="username" placeholder="Aadhar Number" style="margin-bottom: 10px;">
+      <div class="invalid-feedback">Please enter a Aadhar Number</div>
+      <div *ngIf="registerForm.get('username').hasError('maxlength')" class="invalid-feedback">aadhar number should be 12 digit
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="password" placeholder="Password"
+        style="margin-bottom: 10px"
+        [class.is-invalid]='registerForm.get("password").errors && registerForm.get("password").touched'>
+      <div *ngIf="registerForm.get('password').hasError('required')" class="invalid-feedback">Please enter a Password
+      </div>
+      <div *ngIf="registerForm.get('password').hasError('minlength')" class="invalid-feedback">Password must be atleast 8
+        characters</div>
+        <div *ngIf="registerForm.get('password').hasError('maxlength')" class="invalid-feedback">Password must be atmost 12
+          characters</div>
+    </div>
+
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password"
+        [class.is-invalid]='registerForm.get("confirmPassword").errors && registerForm.get("confirmPassword").touched'>
+      <div *ngIf="registerForm.get('confirmPassword').hasError('required')" class="invalid-feedback">Please enter a
+        confirm Password</div>
+      <div *ngIf="registerForm.get('confirmPassword').hasError('isMatching')" class="invalid-feedback">Confirm Password
+        should match the Password</div>
+    </div>
+
+    <div class="row" *ngIf='validationErrors.length > 0'>
+      <ul class="text-danger">
+        <li *ngFor="let error of validationErrors">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group text-center">
+      <button class="btn btn-success mr-2" [disabled]="!registerForm.valid" type="submit">Register</button>
+      <button class="btn btn-primary mr-2" routerLink="/home" type="button">Cancel</button>
+    </div>
+  </form>
+  <div style="margin-bottom: 150px;">
+
+  </div>
+</div>

@@ -1,0 +1,59 @@
+
+<div class="container nt-5">
+  <div *ngIf="!registerMode" style="text-align: center;">
+  <h1>National Pension Scheme</h1>
+  <h3 class="lead" style="margin:50px ;">Apply for National Pension Scheme Today!</h3>
+
+  <table class="table" style="margin: 75px ;">
+    <caption>Available Pension Schemes</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Pension Type</th>
+        <th scope="col">Bank Type</th>
+        <th scope="col">Cost Deductions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>SELF</td>
+        <td>PUBLIC</td>
+        <td>80% of the last salary earned + allowance + Bank charge(500)</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>SELF</td>
+        <td>PRIVATE</td>
+        <td>80% of the last salary earned + allowance + Bank charge(550)</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>FAMILY</td>
+        <td>PUBLIC</td>
+        <td>50% of the last salary earned + allowance + Bank charge(500)</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>FAMILY</td>
+        <td>PRIVATE</td>
+        <td>50% of the last salary earned + allowance + Bank charge(550)</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <div class="text-center" style="margin-bottom:30px ;">
+    <button (click)="registerModeToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
+    <button class="btn btn-info btn-lg">Learn More</button>
+  </div>
+  </div>
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <app-register></app-register>
+      </div>
+    </div>
+  </div>
+</div>
